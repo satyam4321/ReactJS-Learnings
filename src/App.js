@@ -6,16 +6,34 @@ import {useState} from 'react';
 
 // alert("hello");
 function App() {
-  const [data, setData] = useState(0);
-  function apple() {
-    setData(data + 1)
+  const [data, setData] = useState(null);
+  const [status, setShow] = useState(false);
+  // function apple() {
+  //   setData(data + 1)
     // alert("function called");
+  // }
+ 
+  function getvalue(val) {
+    console.log(val.target.value);
+    setData(val.target.value);
   }
   return (
     <div className="App">
-      <h1>{data}</h1>
-      {/* <button onClick={() => alert("hello")}>click me</button> */}
-      <button onClick={apple}>click me</button>
+      {
+        status ? 
+          <h1>{data}</h1>
+        :
+        <h1>{null}</h1>
+      }
+      <input type = "text" onChange={getvalue}/>
+      {
+        status ? <button onClick={() => {setShow(false)}}>hide</button>
+        :
+          <button onClick={() => {setShow(true)}}>show</button>
+      }
+        
+      {/* <button onClick={() => {setShow(!status)}}>Toggle</button> */}
+      {/* <button onClick={apple}>click me</button> */}
     </div>
   );
 }
