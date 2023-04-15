@@ -8,15 +8,23 @@ import {useState} from 'react';
 function App() {
   const [data, setData] = useState(null);
   const [status, setShow] = useState(false);
+  const [intrest, setIntrest] = useState(null);
+  const [ch, setCh] = useState(false);
   // function apple() {
   //   setData(data + 1)
     // alert("function called");
   // }
  
-  function getvalue(val) {
-    console.log(val.target.value);
-    setData(val.target.value);
+  // function getvalue(val) {
+  //   console.log(val.target.value);
+  //   setData(val.target.value);
+  // }
+
+  function getFormData(e) {
+    console.log(data, intrest);
+    e.preventDefault();
   }
+  console.log('hello');
   return (
     <div className="App">
       {
@@ -25,15 +33,27 @@ function App() {
         :
         <h1>{null}</h1>
       }
-      <input type = "text" onChange={getvalue}/>
-      {
-        status ? <button onClick={() => {setShow(false)}}>hide</button>
-        :
-          <button onClick={() => {setShow(true)}}>show</button>
-      }
+      <form onSubmit={getFormData}>
+        <input type = "text" placeholder='Enter Name' onChange={(e) => {setData(e.target.value)}}/>
+        {
+          status ? <button onClick={() => {setShow(false)}}>hide</button>
+          :
+            <button onClick={() => {setShow(true)}}>show</button>
+        }
+        <br />
+        <select onChange={(e) => setIntrest(e.target.value)}>
+          <option>Select Option</option>
+          <option>Marvel</option>
+          <option>DC</option>
+        </select>
+        <br /><br />
+        <input type='checkbox' onChange={(e) => setCh(e.target.checked)}/><span>Accept the terms and conditions</span>
         
-      {/* <button onClick={() => {setShow(!status)}}>Toggle</button> */}
-      {/* <button onClick={apple}>click me</button> */}
+        <button type='submit'>Submit</button>
+          
+        {/* <button onClick={() => {setShow(!status)}}>Toggle</button> */}
+        {/* <button onClick={apple}>click me</button> */}
+        </form>
     </div>
   );
 }
