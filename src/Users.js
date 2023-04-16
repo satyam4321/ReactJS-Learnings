@@ -1,7 +1,10 @@
-function Users() {
+import React from "react";
+
+function Users(props) {
     return (
       <div className="App">
-        <h1>hello Users!</h1>
+        <h1>User Component</h1>
+        <button onClick={() => props.call()}>Click Me</button>
       </div>
     );
   }

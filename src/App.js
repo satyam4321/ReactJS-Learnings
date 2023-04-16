@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Users from './Users';
-
+import React from 'react';
 import {useState} from 'react';
 
 // alert("hello");
@@ -24,9 +24,16 @@ function App() {
     console.log(data, intrest);
     e.preventDefault();
   }
-  console.log('hello');
+  function getData() {
+    // alert("Hello from app")
+    alert("get data is called")
+
+  }
+  // console.log('hello');
   return (
     <div className="App">
+    
+      <Users call = {getData} />
       {
         status ? 
           <h1>{data}</h1>
