@@ -4,6 +4,8 @@ import Users from './Users';
 import React from 'react';
 import {useState} from 'react';
 
+import Student from './Student';
+
 // alert("hello");
 function App() {
   const [data, setData] = useState('Satyam');
@@ -32,7 +34,6 @@ function App() {
   // console.log('hello');
   return (
     <div className="App">
-    
       <Users name  = {data} />
       {/* <Users call = {getData}/> */}
       {
