@@ -6,7 +6,7 @@ import {useState} from 'react';
 
 // alert("hello");
 function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState('Satyam');
   const [status, setShow] = useState(false);
   const [intrest, setIntrest] = useState(null);
   const [ch, setCh] = useState(false);
@@ -26,14 +26,15 @@ function App() {
   }
   function getData() {
     // alert("Hello from app")
-    alert("get data is called")
+    // alert("get data is called")
 
   }
   // console.log('hello');
   return (
     <div className="App">
     
-      <Users call = {getData} />
+      <Users name  = {data} />
+      {/* <Users call = {getData}/> */}
       {
         status ? 
           <h1>{data}</h1>
