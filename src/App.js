@@ -5,6 +5,8 @@ import React from 'react';
 import {useState} from 'react';
 
 import Student from './Student';
+import Hooks from './Hooks';
+
 
 // alert("hello");
 function App() {
@@ -31,11 +33,12 @@ function App() {
     // alert("get data is called")
 
   }
-  // console.log('hello');
+  console.log('hello');
   return (
     <div className="App">
-      <Users name  = {data} />
+      {/* <Users name  = {data} /> */}
       {/* <Users call = {getData}/> */}
+      <Hooks />
       {
         status ? 
           <h1>{data}</h1>
