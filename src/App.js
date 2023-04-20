@@ -6,7 +6,7 @@ import {useState} from 'react';
 
 import Student from './Student';
 import Hooks from './Hooks';
-
+import ArrayList from './ArrayList'
 
 // alert("hello");
 function App() {
@@ -33,13 +33,14 @@ function App() {
     // alert("get data is called")
 
   }
-  console.log('hello');
+  // console.log('hello');
   return (
     <div className="App">
       {/* <Users name  = {data} /> */}
       {/* <Users call = {getData}/> */}
-      <Hooks />
-      {
+      {/* <Hooks /> */}
+      <ArrayList />
+      {/* {
         status ? 
           <h1>{data}</h1>
         :
@@ -61,11 +62,11 @@ function App() {
         <br /><br />
         <input type='checkbox' onChange={(e) => setCh(e.target.checked)}/><span>Accept the terms and conditions</span>
         
-        <button type='submit'>Submit</button>
+        <button type='submit'>Submit</button> */}
           
         {/* <button onClick={() => {setShow(!status)}}>Toggle</button> */}
         {/* <button onClick={apple}>click me</button> */}
-        </form>
+        {/* </form> */}
     </div>
   );
 }
