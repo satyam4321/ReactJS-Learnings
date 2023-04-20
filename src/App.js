@@ -7,6 +7,7 @@ import {useState} from 'react';
 import Student from './Student';
 import Hooks from './Hooks';
 import ArrayList from './ArrayList'
+import Pro from './Props';
 
 // alert("hello");
 function App() {
@@ -34,12 +35,17 @@ function App() {
 
   }
   // console.log('hello');
+
+  function parentAlert(value) {
+      alert(value.name);
+  }
   return (
     <div className="App">
       {/* <Users name  = {data} /> */}
       {/* <Users call = {getData}/> */}
-      {/* <Hooks /> */}
-      <ArrayList />
+      <Hooks />
+      {/* <Pro name = {data} alert = {parentAlert}/> */}
+      {/* <ArrayList /> */}
       {/* {
         status ? 
           <h1>{data}</h1>

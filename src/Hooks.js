@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 import Pro from "./Props";
 
@@ -13,8 +13,10 @@ function Hooks() {
     // useEffect(() => {
     //     alert('count is' + count)
     // }, [count])
+
+    
     return (
-        <div>
+        <>
             <Pro data ={data} count = {count}/>
             {/* <h1>Data: {data}</h1> */}
             {/* <h1>Count: {count}</h1> */}
@@ -22,7 +24,7 @@ function Hooks() {
             <br />
             <br />
             <button onClick={() => setCount(count + 1)}>update Count</button>
-        </div>
+        </>
     )
 }
 

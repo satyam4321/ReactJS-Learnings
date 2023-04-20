@@ -1,3 +1,4 @@
+import { PureComponent } from "react";
 import React from "react";
 import Student from "./Student";
 // function Users(props) {
@@ -9,7 +10,7 @@ import Student from "./Student";
 //     );
 //   }
 
-class Users extends React.Component{
+class Users extends PureComponent{
   
   constructor() {
     super();
@@ -34,13 +35,15 @@ class Users extends React.Component{
     //   this.setState({count: this.state.count + 1});
     // }
   }
-  shouldComponentUpdate() {
-    console.log("shouldComponentUpdate", this.state.show);
-    // if(this.state.count >= 5 && this.state.count < 10) {
-    //   return true;
-    // }
-    return true;
-  }
+
+  // ShouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.
+  // shouldComponentUpdate() {
+  //   console.log("shouldComponentUpdate", this.state.show);
+  //   // if(this.state.count >= 5 && this.state.count < 10) {
+  //   //   return true;
+  //   // }
+  //   return true;
+  // }
 
   
   render() {
@@ -57,7 +60,7 @@ class Users extends React.Component{
         {/* <h1>User {this.props.name}</h1> */}
         <h1>User Component {this.state.count}</h1>
         {/* <button onClick={() => this.setState({email: 'maurya@test.com'})}>Update Email</button> */}
-        <button onClick={() => this.setState({count: this.state.count + 1})}>Update count</button>
+        <button onClick={() => this.setState({count: 1})}>Update count</button>
       </div>
     )
   }
